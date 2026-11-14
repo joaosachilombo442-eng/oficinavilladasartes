@@ -28,3 +28,10 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Application architecture
+- Keep this phase as a single public index page with hash-based section navigation because the supplied brief explicitly requests one scrolling page.
+- Keep institutional content, catalog values and WhatsApp message builders in a browser-safe data module so updates stay centralized and testable.
+- Reservation requests open a prefilled WhatsApp conversation only; do not store submissions or add server functionality because the brief explicitly excludes a database and chooses WhatsApp delivery.
+- Use shared design-system buttons and global semantic style tokens, with focused components for catalog items and reservations, to keep presentation consistent.
+- Prebundle the page's UI dependencies and reject outdated optimizer requests so preview updates cannot mix React module generations and invalidate hook dispatchers.
