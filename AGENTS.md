@@ -34,3 +34,4 @@ use the editor.
 - Keep institutional content, catalog values and WhatsApp message builders in a browser-safe data module so updates stay centralized and testable.
 - Reservation requests open a prefilled WhatsApp conversation only; do not store submissions or add server functionality because the brief explicitly excludes a database and chooses WhatsApp delivery.
 - Use shared design-system buttons and global semantic style tokens, with focused components for catalog items and reservations, to keep presentation consistent.
+- Prebundle the page's UI dependencies and reject outdated optimizer requests so preview updates cannot mix React module generations and invalidate hook dispatchers.
