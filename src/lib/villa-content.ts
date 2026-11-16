@@ -5,6 +5,18 @@ import workshop from '@/assets/kit-workshop.jpg';
 import festaAsset from '@/assets/caixa-festa-branca.jpg.asset.json';
 const festa = festaAsset.url;
 import imanes from '@/assets/imanes.jpg';
+import retratoVid from '@/assets/galeria-exposicao-retrato.mp4.asset.json';
+import pavaoVid from '@/assets/galeria-exposicao-pavao.mp4.asset.json';
+import borboletaVid from '@/assets/galeria-espaco-borboleta.mp4.asset.json';
+import bailarinasVid from '@/assets/galeria-exposicao-bailarinas.mp4.asset.json';
+import rosasVid from '@/assets/galeria-exposicao-rosas.mp4.asset.json';
+import cocktailsVid from '@/assets/galeria-cocktails.mp4.asset.json';
+import retratoPoster from '@/assets/galeria-exposicao-retrato.jpg.asset.json';
+import pavaoPoster from '@/assets/galeria-exposicao-pavao.jpg.asset.json';
+import borboletaPoster from '@/assets/galeria-espaco-borboleta.jpg.asset.json';
+import bailarinasPoster from '@/assets/galeria-exposicao-bailarinas.jpg.asset.json';
+import rosasPoster from '@/assets/galeria-exposicao-rosas.jpg.asset.json';
+import cocktailsPoster from '@/assets/galeria-cocktails.jpg.asset.json';
 
 export const contact = { phone: '+244 951 444 600', whatsapp: '244951444600', email: 'oficinavilladasartes2026@gmail.com', instagram: 'OficinaVillaDasArtes', instagramUrl: '', location: 'Morro Bento, Luanda, Angola' };
 export const navigation = [{ id:'inicio', label:'Início' }, { id:'quem-somos', label:'Quem Somos' }, { id:'clube-criativo', label:'Clube Criativo' }, { id:'produtos', label:'Produtos' }, { id:'galeria', label:'Galeria' }, { id:'contactos', label:'Contactos' }];
@@ -25,6 +37,14 @@ export const galleryOffers = [
  { key:'workshops', title:'Workshops e actividades artísticas', price:40000, items:['Até 12 participantes','O cliente traz os seus participantes e materiais','A Oficina disponibiliza o espaço'] },
  { key:'exposicoes', title:'Exposições e eventos corporativos', price:50000, items:['Exposições artísticas','Eventos corporativos','Apresentações e outras actividades'] },
  { key:'cocktails', title:'Cocktails e outras actividades', price:undefined as number|undefined, items:['Cocktails e networking','Utilização do espaço para outras actividades','Condições sob consulta'] },
+];
+export const galleryVideos = [
+ { src: retratoVid.url, poster: retratoPoster.url, title: 'Retrato e paisagem em exposição', alt: 'Pintura de uma mulher de olhos vendados ao lado de uma paisagem vermelha na parede da galeria', aspect: '848/480', narrow: false },
+ { src: pavaoVid.url, poster: pavaoPoster.url, title: 'Pavão real emoldurado na sala de exposições', alt: 'Pintura de um pavão em tons de verde e dourado, emoldurada, na parede branca da galeria', aspect: '848/480', narrow: false },
+ { src: borboletaVid.url, poster: borboletaPoster.url, title: 'Borboleta verde na sala de estar do espaço', alt: 'Pintura de uma borboleta verde sobre fundo verde, com uma poltrona na sala da galeria', aspect: '848/480', narrow: false },
+ { src: bailarinasVid.url, poster: bailarinasPoster.url, title: 'Bailarinas em tons de rosa na parede cinzenta', alt: 'Quadros de bailarinas em rosa e laranja pendurados numa parede cinzenta da galeria', aspect: '848/480', narrow: false },
+ { src: rosasVid.url, poster: rosasPoster.url, title: 'Pequenos quadros rosa em exposição', alt: 'Pequenos quadros rosa pendurados na parede da galeria junto a uma porta aberta', aspect: '848/480', narrow: false },
+ { src: cocktailsVid.url, poster: cocktailsPoster.url, title: 'Copos personalizados para cocktails e experiências', alt: 'Copos de vidro com tampa, palhinha e capa personalizada da Galeria Villa Criativa numa mesa de madeira', aspect: '478/850', narrow: true },
 ];
 export function galleryOfferMessage(title:string) { return `Olá, Oficina Villa das Artes! Gostaria de obter informações sobre a utilização da Galeria Villa Criativa para: ${title}.`; }
 export const galleryMessage = 'Olá, Oficina Villa das Artes! Gostaria de obter informações sobre a Galeria Villa Criativa e as condições de utilização do espaço.';

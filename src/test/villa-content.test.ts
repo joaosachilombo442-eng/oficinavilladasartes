@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { kits, products, contact, kitMessage, productMessage, whatsappUrl, reservationMessage, validateReservation, galleryOffers, type Reservation } from '@/lib/villa-content';
+import { kits, products, contact, kitMessage, productMessage, whatsappUrl, reservationMessage, validateReservation, galleryOffers, galleryVideos, type Reservation } from '@/lib/villa-content';
 
 describe('Official catalog and WhatsApp rules',()=>{
  it('prices Kandengue at 6000 Kz',()=>expect(kits[0]?.price).toBe(6000));
@@ -8,6 +8,8 @@ describe('Official catalog and WhatsApp rules',()=>{
  it('prices Caixa Festa at 8000 Kz',()=>expect(products[0]?.price).toBe(8000));
  it('prices the set of 6 magnets at 8000 Kz',()=>expect([products[1]?.price,products[1]?.maxPrice]).toEqual([8000,undefined]));
  it('prices gallery workshops from 40000 and exhibitions from 50000 Kz',()=>expect([galleryOffers[0]?.price,galleryOffers[1]?.price]).toEqual([40000,50000]));
+ it('shows the six real gallery videos, each with a preview frame',()=>{ expect(galleryVideos).toHaveLength(6); galleryVideos.forEach(v=>{ expect(v.src).toMatch(/\.mp4$/); expect(v.poster).toMatch(/\.jpg$/); expect(v.title.trim()).not.toBe(''); }); });
+ it('marks only the cocktails clip as vertical',()=>expect(galleryVideos.filter(v=>v.narrow).map(v=>v.title)).toEqual(['Copos personalizados para cocktails e experiências']));
  it('offers the five specified Caixa Festa colors',()=>expect(products[0]?.colors).toEqual(['Preto','Branco','Rosa-claro','Azul-claro','Verde-claro']));
  it('routes conversations to the official number',()=>expect(new URL(whatsappUrl('Olá')).pathname).toBe('/244951444600'));
  it('identifies every selected kit',()=>kits.forEach(kit=>expect(kitMessage(kit.name)).toContain(kit.name)));
