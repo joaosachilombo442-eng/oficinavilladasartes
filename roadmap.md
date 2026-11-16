@@ -5,6 +5,6 @@
 - [x] Substituir a imagem principal pela fotografia real da entrada da Galeria.
 - [x] Retirar a faixa de localização do topo da página.
 - [x] Integrar os seis vídeos reais na secção Galeria Villa Criativa.
-- [ ] Receber a fotografia real dos Ímanes Personalizados.
+- [x] Usar a fotografia enviada para os Ímanes Personalizados.
 - [ ] Confirmar qual é o Instagram oficial do espaço antes de publicar ligações.
-- [ ] Decidir se a morada se mantém na secção Contactos e no rodapé.
+- [x] Manter a morada «Morro Bento, Luanda, Angola» na secção Contactos e no rodapé.

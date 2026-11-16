@@ -7,6 +7,7 @@ describe('Official catalog and WhatsApp rules',()=>{
  it('prices Workshop at 12000 Kz',()=>expect(kits[2]?.price).toBe(12000));
  it('prices Caixa Festa at 8000 Kz',()=>expect(products[0]?.price).toBe(8000));
  it('prices the set of 6 magnets at 8000 Kz',()=>expect([products[1]?.price,products[1]?.maxPrice]).toEqual([8000,undefined]));
+ it('shows the real magnets photograph sent by the studio',()=>expect(products[1]?.image).toMatch(/imans-personalizados\.jpg$/));
  it('prices gallery workshops from 40000 and exhibitions from 50000 Kz',()=>expect([galleryOffers[0]?.price,galleryOffers[1]?.price]).toEqual([40000,50000]));
  it('shows the six real gallery videos, each with a preview frame',()=>{ expect(galleryVideos).toHaveLength(6); galleryVideos.forEach(v=>{ expect(v.src).toMatch(/\.mp4$/); expect(v.poster).toMatch(/\.jpg$/); expect(v.title.trim()).not.toBe(''); }); });
  it('marks only the cocktails clip as vertical',()=>expect(galleryVideos.filter(v=>v.narrow).map(v=>v.title)).toEqual(['Copos personalizados para cocktails e experiências']));
