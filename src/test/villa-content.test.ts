@@ -1,13 +1,14 @@
 import { describe, expect, it } from 'vitest';
-import { kits, products, contact, kitMessage, productMessage, whatsappUrl, reservationMessage, validateReservation, type Reservation } from '@/lib/villa-content';
+import { kits, products, contact, kitMessage, productMessage, whatsappUrl, reservationMessage, validateReservation, galleryOffers, type Reservation } from '@/lib/villa-content';
 
 describe('Official catalog and WhatsApp rules',()=>{
  it('prices Kandengue at 6000 Kz',()=>expect(kits[0]?.price).toBe(6000));
  it('prices Oficina at 8000 Kz',()=>expect(kits[1]?.price).toBe(8000));
  it('prices Workshop at 12000 Kz',()=>expect(kits[2]?.price).toBe(12000));
  it('prices Caixa Festa at 8000 Kz',()=>expect(products[0]?.price).toBe(8000));
- it('prices magnets from 6000 to 8000 Kz',()=>expect([products[1]?.price,products[1]?.maxPrice]).toEqual([6000,8000]));
- it('offers the five specified Caixa Festa colors',()=>expect(products[0]?.colors).toEqual(['Preto','Verde','Azul','Rosa','Branco']));
+ it('prices the set of 6 magnets at 8000 Kz',()=>expect([products[1]?.price,products[1]?.maxPrice]).toEqual([8000,undefined]));
+ it('prices gallery workshops from 40000 and exhibitions from 50000 Kz',()=>expect([galleryOffers[0]?.price,galleryOffers[1]?.price]).toEqual([40000,50000]));
+ it('offers the five specified Caixa Festa colors',()=>expect(products[0]?.colors).toEqual(['Preto','Branco','Rosa-claro','Azul-claro','Verde-claro']));
  it('routes conversations to the official number',()=>expect(new URL(whatsappUrl('Olá')).pathname).toBe('/244951444600'));
  it('identifies every selected kit',()=>kits.forEach(kit=>expect(kitMessage(kit.name)).toContain(kit.name)));
  it('identifies every selected product',()=>products.forEach(p=>expect(productMessage(p.name)).toContain(p.name)));
