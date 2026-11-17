@@ -8,3 +8,4 @@
 - [x] Usar a fotografia enviada para os Ímanes Personalizados.
 - [ ] Confirmar qual é o Instagram oficial do espaço antes de publicar ligações.
 - [x] Manter a morada «Morro Bento, Luanda, Angola» na secção Contactos e no rodapé.
+- [x] Substituir quatro ocorrências repetidas da Galeria por novas fotografias, preservando as imagens ilustrativas e a estrutura.
