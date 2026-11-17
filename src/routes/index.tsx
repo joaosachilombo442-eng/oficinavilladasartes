@@ -11,7 +11,10 @@ import entradaGaleria from '@/assets/entrada-galeria.jpg.asset.json';
 import ceo from '@/assets/ceo.jpg';
 import galeria2 from '@/assets/galeria-02.jpg';
 import galeria3 from '@/assets/galeria-03.jpg';
-import galeria4 from '@/assets/galeria-04.jpg';
+import celebracoes from '@/assets/galeria-celebracoes.jpeg.asset.json';
+import kitPintura from '@/assets/galeria-kit-pintura.jpeg.asset.json';
+import mascaras from '@/assets/galeria-mascaras-criativas.jpeg.asset.json';
+import copos from '@/assets/galeria-copos-personalizados.jpeg.asset.json';
 import galeria5 from '@/assets/galeria-05.jpg';
 import galeria6 from '@/assets/galeria-06.jpg';
 import galeria7 from '@/assets/galeria-07.jpg';
@@ -38,9 +41,9 @@ function Index() {
    <section id="galeria" className="section bg-muted"><div className="page-width"><div className="section-heading"><div><div className="eyebrow text-gold">GALERIA VILLA CRIATIVA</div><h2 className="section-title">Um espaço para criar,<br/>partilhar e inspirar.</h2><p className="section-lead">Conheça a Galeria Villa Criativa, um espaço versátil dedicado à expressão artística, aprendizagem, encontros e experiências culturais.</p></div><WhatsAppLink message={galleryMessage}>Conhecer o espaço <ArrowUpRight/></WhatsAppLink></div><div className="gallery-visual">
       <img src={galeria2} alt="Atividade de workshop – foto 1" loading="lazy" width={1536} height={1024}/>
       <img src={galeria3} alt="Atividade de workshop – foto 2" loading="lazy" width={1536} height={1024}/>
-      <img src={galeria4} alt="Cocktail & networking – foto 3" loading="lazy" width={1536} height={1024}/>
+      <img src={celebracoes.url} alt="Caixas de celebração em várias cores com pratos e talheres" loading="lazy" width={1536} height={1024}/>
       <img src={galeria5} alt="Sessão fotográfica – foto 4" loading="lazy" width={1536} height={1024}/>
-      <img src={galeria6} alt="Exposição de arte – foto 5" loading="lazy" width={1536} height={1024}/>
+      <img src={mascaras.url} alt="Máscaras de animais para actividades criativas" loading="lazy" width={1536} height={1024}/>
       <img src={galeria7} alt="Reunião empresarial – foto 6" loading="lazy" width={1536} height={1024}/>
       <img src={galeria8} alt="Evento cultural – foto 7" loading="lazy" width={1536} height={1024}/>
     </div><div className="gallery-videos-head"><h3>Galeria em vídeo</h3><p>Filmagens reais do espaço e das exposições.</p></div><div className="gallery-videos">{galleryVideos.map(v=><figure className={`gallery-video${v.narrow?' gallery-video--narrow':''}`} key={v.src}><video src={v.src} poster={v.poster} controls preload="none" playsInline aria-label={v.alt} style={{aspectRatio:v.aspect}}/><figcaption>{v.title}</figcaption></figure>)}</div><div className="gallery-offers">{galleryOffers.map(o=><article className="gallery-offer" key={o.key}><img src={{workshops:galeria2,exposicoes:galeria6,cocktails:galeria4}[o.key]} alt={o.title} loading="lazy" width={1536} height={1024}/><div className="product-body"><h3>{o.title}</h3>{o.price?<p className="product-price"><small>A partir de </small>{formatPrice(o.price)} <small>Kz</small></p>:<p className="product-price"><small>Preço sob consulta</small></p>}<ul>{o.items.map(i=><li key={i}><Check/>{i}</li>)}</ul><Button asChild variant="outline" size="lg" className="mt-auto"><a href={whatsappUrl(galleryOfferMessage(o.title))} target="_blank" rel="noopener noreferrer">Pedir informações <ArrowUpRight/></a></Button></div></article>)}</div><div className="gallery-uses">{[{icon:Palette,text:'Workshops e actividades artísticas'},{icon:Users,text:'Reuniões empresariais'},{icon:Video,text:'Gravação de vídeos e Vlogs'},{icon:Camera,text:'Sessões fotográficas'},{icon:Presentation,text:'Exposições e formações'},{icon:Check,text:'Apresentações e eventos privados'}].map(({icon:Icon,text})=><span key={text}><Icon/>{text}</span>)}</div><VillaReservation/></div></section>
